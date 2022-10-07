@@ -72,18 +72,17 @@ PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
         
     # Display message
         echo "You guessed it in $FINAL_COUNT tries. The secret number was $SECRET_NUMBER. Nice job!"
-
-
         DONE=1
+        
       else
-  # If guess is higher
+  # If guess is lower
         if [[ $GUESS -lt $SECRET_NUMBER ]]
         then
           echo "It's higher than that, guess again:"
           let "ATTEMPT = $ATTEMPT + 1"
 
         else
-  # If guess is lower
+  # If guess is higher
         echo "It's lower than that, guess again:"
         let "ATTEMPT = $ATTEMPT + 1"
         fi
